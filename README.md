@@ -11,7 +11,7 @@ AI-powered system using RAG (Retrieval-Augmented Generation) + Multi-Agent orche
 - **Tech Stack**: FastAPI, Gemini 1.5, ChromaDB, LangChain, Streamlit
 
 ### **3. System Architecture**
-
+https://github.com/mudrikapatel/-ai-smart-bug-analyzer-milestone1-/blob/main/docs/system_architecture.md
 
 1. **Bug Submission**: User uploads description + stack trace via UI/API
 2. **RAG Pipeline**: Embed query → ChromaDB vector search → top-5 similar bugs
