@@ -1,0 +1,107 @@
+from pptx import Presentation
+from pptx.util import Inches, Pt
+from pptx.dml.color import RGBColor
+
+prs = Presentation()
+
+# -------- helper function for styling --------
+def style_text(text_frame):
+    for paragraph in text_frame.paragraphs:
+        for run in paragraph.runs:
+            run.font.size = Pt(20)
+            run.font.name = "Calibri"
+            run.font.color.rgb = RGBColor(30, 30, 30)
+
+def add_slide(title, content):
+    slide = prs.slides.add_slide(prs.slide_layouts[1])
+    slide.shapes.title.text = title
+    body = slide.placeholders[1]
+    body.text = content
+    style_text(body.text_frame)
+
+# -------- TITLE SLIDE --------
+slide = prs.slides.add_slide(prs.slide_layouts[0])
+slide.shapes.title.text = "AI Smart Bug Analyzer & Fix Advisor"
+slide.placeholders[1].text = "Milestone 1 | Infosys Springboard Project"
+
+# -------- SLIDES --------
+
+add_slide(
+    "Project Overview",
+    "AI-based system that analyzes software bugs using RAG and Multi-Agent architecture.\n"
+    "It automatically identifies root cause and suggests fixes."
+)
+
+add_slide(
+    "Problem Statement",
+    "- Manual debugging is time-consuming\n"
+    "- Stack traces are difficult to analyze\n"
+    "- Finding similar bugs is complex"
+)
+
+add_slide(
+    "Proposed Solution",
+    "- Use AI + RAG pipeline\n"
+    "- Store historical bugs in ChromaDB\n"
+    "- Use AI agents for analysis and fix suggestions"
+)
+
+add_slide(
+    "System Architecture",
+    "User → Bug Submission → Preprocessing → Embeddings → ChromaDB\n"
+    "→ AI Agents → Final Response"
+)
+
+add_slide(
+    "AI Agents",
+    "- Triage Agent: severity & priority\n"
+    "- Root Cause Agent: issue analysis\n"
+    "- Log Analysis Agent: stack trace parsing\n"
+    "- Fix Advisor: solution generation"
+)
+
+add_slide(
+    "Workflow",
+    "1. User submits bug\n"
+    "2. Preprocessing\n"
+    "3. Embedding generation\n"
+    "4. Similar bug retrieval (RAG)\n"
+    "5. AI analysis\n"
+    "6. Fix suggestion"
+)
+
+add_slide(
+    "Tech Stack",
+    "- Python\n"
+    "- FastAPI\n"
+    "- ChromaDB\n"
+    "- LangChain\n"
+    "- Sentence Transformers\n"
+    "- GPT / Llama 3"
+)
+
+add_slide(
+    "Sample Output",
+    "Severity: High\n"
+    "Root Cause: NullPointerException\n"
+    "Fix: Add null checks before object access\n"
+    "Confidence: 92%"
+)
+
+add_slide(
+    "Future Scope",
+    "- GitHub integration\n"
+    "- Jira automation\n"
+    "- Auto code fix PRs\n"
+    "- Multi-language support"
+)
+
+# -------- THANK YOU --------
+slide = prs.slides.add_slide(prs.slide_layouts[0])
+slide.shapes.title.text = "Thank You"
+slide.placeholders[1].text = "Questions?"
+
+# save file
+prs.save("AI_Bug_Analyzer_Professional_PPT.pptx")
+
+print("Professional PPT Created Successfully!")
