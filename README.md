@@ -46,10 +46,6 @@ https://github.com/mudrikapatel/-ai-smart-bug-analyzer-milestone1-/blob/main/doc
 5. `streamlit run frontend/app.py` - UI
 
 ### **7. Demo Video**
+### **8. Workflow
+https://github.com/mudrikapatel/-ai-smart-bug-analyzer-milestone1-/commit/1eb3f0150c494435fad6cda04d575e2aa426e0c4
 
-
-### **8. Next Steps - Milestone 2**
-1. Duplicate Detection Agent
-2. Remediation Agent (code fix suggestions)
-3. Apache/Eclipse datasets
-4. Cloud deployment
