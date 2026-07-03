@@ -45,7 +45,9 @@ https://github.com/mudrikapatel/-ai-smart-bug-analyzer-milestone1-/blob/main/doc
 4. `uvicorn backend.main:app --reload` - API
 5. `streamlit run frontend/app.py` - UI
 
+
 ### **7. Demo Video**
 ### **8. Workflow
 https://github.com/mudrikapatel/-ai-smart-bug-analyzer-milestone1-/commit/1eb3f0150c494435fad6cda04d575e2aa426e0c4
-
+### **9.PPT
+python professional_ppt.py
