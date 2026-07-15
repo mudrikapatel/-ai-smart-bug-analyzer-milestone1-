@@ -1,0 +1,21 @@
+Bug ID: BUG-012
+Title: Export PDF Failed
+Module: Reports
+Severity: Medium
+
+Description:
+This issue was observed during testing of the Reports module.
+
+Steps to Reproduce:
+1. Open the application
+2. Navigate to Reports
+3. Perform the related action
+
+Expected Result:
+Feature should work correctly.
+
+Actual Result:
+The operation failed.
+
+Error:
+PDF generation error
