@@ -1,5 +1,4 @@
-# -ai-smart-bug-analyzer-milestone1-
-# AI Smart Bug Analyzer & Fix Advisor
+Creation of Intelligent Bug Diagnosis Platform with Fix Recommendation Assistance Group 1
 ## Milestone 1: Bug Submission + RAG Pipeline
 ### **1. Problem Statement**
 Manual bug triage is slow. Developers waste 30-40% time searching old similar bugs. No centralized knowledge of past fixes → duplicate bugs → wasted effort.
