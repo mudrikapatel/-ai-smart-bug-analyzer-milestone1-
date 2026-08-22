@@ -33,10 +33,11 @@ def find_similar_bugs(query):
 
         # Combine all text columns
 
-        df["combined_text"] = df[text_columns].fillna("").agg(
-            " ".join,
-            axis=1
-        )
+        df["combined_text"] = (
+            df["Title"].fillna("") + " " +
+            df["Description"].fillna("") + " " +
+            df["Root_Cause"].fillna("")
+)
 
 
 
@@ -73,19 +74,10 @@ def find_similar_bugs(query):
 
                 results.append({
 
-                    "bug_id":
-                    df.iloc[i].get(
-                        "bug_id",
-                        i+1
-                    ),
+                    "bug_id": df.iloc[i]["Bug_ID"],
 
 
-                    "title":
-                    df.iloc[i].get(
-                        "title",
-                        "Historical Bug"
-                    ),
-
+                    "title": df.iloc[i]["Title"],
 
                     "similarity":
                     round(
@@ -93,11 +85,8 @@ def find_similar_bugs(query):
                         2
                     ),
 
-                    "fix":
-                    df.iloc[i].get(
-                    "fix",
-                    "Inspect the stack trace, validate input data, and apply the same resolution used for similar historical bugs."
-                    )
+                    "fix": df.iloc[i]["Suggested_Fix"],
+
                 })
 
 
@@ -107,7 +96,8 @@ def find_similar_bugs(query):
             reverse=True
         )
 
-
+        print("FINAL RESULTS:")
+        print(results)
         return results[:5]
 
 
