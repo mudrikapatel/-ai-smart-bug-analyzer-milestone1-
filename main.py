@@ -4,7 +4,6 @@ from fastapi.middleware.cors import CORSMiddleware
 import os
 import traceback
 import uuid
-
 from orchestrator import analyze_bug
 
 
